@@ -25,7 +25,7 @@ let personController = {
                 await personModel.update({currentId},{wantedList:{ $push : id}}).exec();
                 // pending
             }
-            return res.json({status:completed});
+            return res.json({status:completed,data:{swipe,id,currentId}});
         } catch(error) {
             return res.json({status:"error",error:error.message});
         }
