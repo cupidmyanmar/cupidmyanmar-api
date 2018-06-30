@@ -44,8 +44,11 @@ let personController = {
 
     getList: async (req,res) => {
         try {
-            let {interest} = req.body;
-            let data = await personModel.find({gender:interest}).lean();
+            let {interest,currentId} = req.body;
+            let {wantedList,ignoreList} = await personModel.findOne({id:currentId});
+            let BigArray = [currentId,...wantedList,...ignoreList];
+            
+            let data = await personModel.find({gender:interest, id : {$nin : BigArray} }).lean();
             return res.json({status:completed,data});
         } catch(error) {
             return res.json({status:"error",error:error.message});
