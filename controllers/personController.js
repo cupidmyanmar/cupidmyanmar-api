@@ -10,7 +10,7 @@ let personController = {
     // photo: {type:String},
     // description: {type:String} 
 
-    post: async (req,res) => {
+    post: (req,res) => {
         let data = req.body;
         return res.json({status:"adssad",data});
         // let {id,name,age,gender,photo,description} = req.body;
