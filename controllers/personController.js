@@ -11,7 +11,7 @@ let personController = {
     // description: {type:String} 
 
     post: (req,res) => {
-        let data = req.body;
+        // let data = req.body;
         return res.json({status:"adssad",data});
         // let {id,name,age,gender,photo,description} = req.body;
         // let person = await personModel.findOne({id});
