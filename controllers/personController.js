@@ -14,13 +14,28 @@ let personController = {
     //     let data =
     // }
 
-    swipe: (req,res) => {
-
+    swipe: async (req,res) => {
+        let {swipe,id,currentId} = req.body;
+        if (swipe == 'left') {
+            // ignore
+            await personModel.update({currentId},{ignoreList:{ $push : id}}).exec();
+        } else {
+            await personModel.update({currentId},{ignoreList:{ $push : id}}).exec();
+            // pending
+        }
     },
 
-    getList: (req,res) => {
-        let interest = req.body.interest; 
+    getAllList: async(req,res) => {
+        let data = await personModel.find({}).lean();
+        return res.json({status:"complete",data});
+    },
 
+    getList: async (req,res) => {
+        let {interest} = req.body; 
+        let list = await personModel.find({gender:interest});
+        // gender,interest
+        // not include in match list
+        // 
     },
 
     post: async (req,res) => {
