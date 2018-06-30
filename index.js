@@ -1,11 +1,16 @@
 
 var express = require('express');
 var app = express();
-
+let bodyparser = require('bodyparser');
 app = require('./routes/')(app);
 
 let db = require('./db');
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
