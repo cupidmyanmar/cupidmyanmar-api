@@ -4,7 +4,7 @@ let process = require('process');
 
 
 let personSchema = new mongoose.Schema({
-    id:  {type:String, required:true,unique:true},
+    id:  {type:String, required:true},
     name: {type:String},
     birthdate: {type:String},
     age: {type:String},
