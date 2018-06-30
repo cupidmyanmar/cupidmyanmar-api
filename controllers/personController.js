@@ -12,7 +12,7 @@ let personController = {
 
     post: (req,res) => {
         // let data = req.body;
-        return res.json({status:"adssad",data});
+        return res.json({status:"adssad"});
         // let {id,name,age,gender,photo,description} = req.body;
         // let person = await personModel.findOne({id});
         // if (person) {
