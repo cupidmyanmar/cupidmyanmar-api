@@ -21,9 +21,9 @@ let personController = {
         try {
             if (swipe == 'left') {
                 // ignore
-               response = await personModel.update({id:currentId},{ignoreList:{ $push : id}}).exec();
+               response = await personModel.update({id:currentId},{$push:{ ignoreList: id}}).exec();
             } else {
-               response = await personModel.update({id:currentId},{wantedList:{ $push : id}}).exec();
+               response = await personModel.update({id:currentId},{$push:{ wantedList : id}}).exec();
                 // pending
             }
             return res.json({status:completed,data:response});
