@@ -13,10 +13,11 @@ let personController = {
     post: (req,res) => {
         let data = req.body;
         // return res.json({status:"adssad",data});
-        let {id,name,age,gender,photo,description} = req.body;
-        return personModel.findOne({id}).then((person) => {
-                return new personModel({id,name,age,gender,photo,description}).save();
-        }).then((data) => {
+        let {id,name,birthdate,gender,photo,description} = req.body;
+        let birthyear = birthdate.split('/')[2];
+        let age =  2018 - birthyear; 
+        
+        return new personModel({id,name,age,gender,photo,description}).save().then((data) => {
             return res.json({status:"completed"});
         }).catch((error) => {
             console.log(error.message);
