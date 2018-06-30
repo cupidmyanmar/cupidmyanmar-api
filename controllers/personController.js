@@ -17,18 +17,29 @@ let personController = {
     
     swipe: async (req,res) => {
         let {swipe,id,currentId} = req.body;
-        if (swipe == 'left') {
-            // ignore
-            await personModel.update({currentId},{ignoreList:{ $push : id}}).exec();
-        } else {
-            await personModel.update({currentId},{wantedList:{ $push : id}}).exec();
-            // pending
+        try {
+            if (swipe == 'left') {
+                // ignore
+                await personModel.update({currentId},{ignoreList:{ $push : id}}).exec();
+            } else {
+                await personModel.update({currentId},{wantedList:{ $push : id}}).exec();
+                // pending
+            }
+            return res.json({status:completed});
+        } catch(error) {
+            return res.json({status:"error",error:error.message});
         }
+       
     },
 
     getAllList: async(req,res) => {
-        let data = await personModel.find({}).lean();
-        return res.json({status:completed,data});
+        try {
+            let data = await personModel.find({}).lean();
+            return res.json({status:completed,data});
+        } catch(error) {
+            return res.json({status:"error",data});
+        }
+       
     },
 
     getList: async (req,res) => {
