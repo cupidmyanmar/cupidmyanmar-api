@@ -21,9 +21,9 @@ let personController = {
         try {
             if (swipe == 'left') {
                 // ignore
-               response = await personModel.update({id:currentId},{$push:{ ignoreList: id}}).exec();
+               response = await personModel.update({id:currentId},{$addToList:{ ignoreList: id}}).exec();
             } else {
-               response = await personModel.update({id:currentId},{$push:{ wantedList : id}}).exec();
+               response = await personModel.update({id:currentId},{$addToList:{ wantedList : id}}).exec();
                 // pending
             }
             return res.json({status:completed,data:response});
@@ -47,7 +47,6 @@ let personController = {
             let {interest,currentId} = req.body;
             let {wantedList,ignoreList} = await personModel.findOne({id:currentId});
             let BigArray = [currentId,...wantedList,...ignoreList];
-            
             let data = await personModel.find({gender:interest, id : {$nin : BigArray} }).lean();
             return res.json({status:completed,data});
         } catch(error) {
