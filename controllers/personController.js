@@ -1,5 +1,5 @@
 let personModel = require('../models/person');
-
+let completed = "completed";
 let personController = {
   
 
@@ -14,25 +14,27 @@ let personController = {
     //     let data =
     // }
 
+    
     swipe: async (req,res) => {
         let {swipe,id,currentId} = req.body;
         if (swipe == 'left') {
             // ignore
             await personModel.update({currentId},{ignoreList:{ $push : id}}).exec();
         } else {
-            await personModel.update({currentId},{ignoreList:{ $push : id}}).exec();
+            await personModel.update({currentId},{wantedList:{ $push : id}}).exec();
             // pending
         }
     },
 
     getAllList: async(req,res) => {
         let data = await personModel.find({}).lean();
-        return res.json({status:"complete",data});
+        return res.json({status:completed,data});
     },
 
     getList: async (req,res) => {
         let {interest} = req.body; 
-        let list = await personModel.find({gender:interest});
+        let data = await personModel.find({gender:interest}).lean();
+        return res.json({status:completed,data});
         // gender,interest
         // not include in match list
         // 
@@ -47,7 +49,7 @@ let personController = {
         try {
             let person =  new personModel({id,name,age,gender,photo,description});
             await person.save();
-            return res.json({status:"completed"});
+            return res.json({status:completed});
         } catch(error) {
             console.log(error);
             return res.json({message:error.message});

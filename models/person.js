@@ -10,7 +10,9 @@ let personSchema = new mongoose.Schema({
     age: {type:String},
     gender: {type:String},
     photo: {type:String},
-    description: {type:String} 
+    description: {type:String},
+    ignoreList:{type:Array},
+    wantedList:{type:Array}
 },{timestamps: true});
 
 
