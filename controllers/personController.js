@@ -29,7 +29,6 @@ let personController = {
         } catch(error) {
             return res.json({status:"error",error:error.message});
         }
-       
     },
 
     getAllList: async(req,res) => {
@@ -43,9 +42,14 @@ let personController = {
     },
 
     getList: async (req,res) => {
-        let {interest} = req.body; 
-        let data = await personModel.find({gender:interest}).lean();
-        return res.json({status:completed,data});
+        try {
+            let {interest} = req.body;
+            let data = await personModel.find({gender:interest}).lean();
+            return res.json({status:completed,data});
+        } catch(error) {
+            return res.json({status:"error",error:error.message});
+        }
+
         // gender,interest
         // not include in match list
         // 
