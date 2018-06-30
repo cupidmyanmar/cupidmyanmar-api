@@ -11,8 +11,8 @@ let personSchema = new mongoose.Schema({
     gender: {type:String},
     photo: {type:String},
     description: {type:String},
-    ignoreList:{type:Array},
-    wantedList:{type:Array}
+    ignoreList:{type:Array, default:[]},
+    wantedList:{type:Array, default:[]}
 },{timestamps: true});
 
 
