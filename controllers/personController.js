@@ -14,7 +14,11 @@ let personController = {
     //     let data =
     // }
 
-    
+    // match: async(req,res) => {
+    //     let 
+    // },
+
+
     swipe: async (req,res) => {
         let {swipe,id,currentId} = req.body;
         let response = {};
