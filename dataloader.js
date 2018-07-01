@@ -24,7 +24,7 @@ let data = [
         id:"okkarminmg",
         name:"Okkar Min Mg",
         gender:"male",
-        photo:"https://scontent.frgn3-1.fna.fbcdn.net/v/t31.0-8/28071116_1734826436570053_2296657937955078743_o.jpg?_nc_cat=0&oh=ed39d183a2fd0681eda9952c2b7d4eeb&oe=5BB2C775",
+        photo:"https://scontent.frgn2-1.fna.fbcdn.net/v/t1.0-9/36467577_1753686914686223_3233445019029340160_n.jpg?_nc_cat=0&oh=cb094941e1c0aa7077e94897ce6fee3b&oe=5B9FABE8",
         age:"25",
         description:"very popular model",
     },
@@ -41,7 +41,7 @@ let data = [
         name:"Lu Lu Aung",
         gender:"female",
         age:"unknown",
-        photo:"https://scontent.frgn3-1.fna.fbcdn.net/v/t31.0-8/19221555_1389756684439317_1432311462261560182_o.jpg?_nc_cat=0&oh=f3af6a78847fe6e5e78cd57fbbdd25f7&oe=5BA5DC22",
+        photo:"https://scontent.frgn2-1.fna.fbcdn.net/v/t1.0-9/36434382_1753686858019562_996063359017156608_n.jpg?_nc_cat=0&oh=539af12c35e7a94afa2baf4d17f07f6c&oe=5BA19BB8",
         description:"Kalay Gyi, hee hee"
     },
     {
@@ -49,7 +49,7 @@ let data = [
         name:"Thinzar Wint Kyaw",
         age:"24",
         gender:"female",
-        photo:"https://pbs.twimg.com/media/C5-1iZtU8AAchZJ.jpg",
+        photo:"https://scontent.frgn2-1.fna.fbcdn.net/v/t1.0-9/36388680_1753686928019555_7235896274480791552_o.jpg?_nc_cat=0&oh=4fa0be2f202b2ca199f808384d178302&oe=5BB11289",
         description:"popular Model",
     },
     {
@@ -57,7 +57,7 @@ let data = [
         name:"Morisaki Win",
         age:"25",
         gender:"male",
-        photo:"https://pmcvariety.files.wordpress.com/2016/06/win-morisaki-1-copy.jpg?w=1000&h=563&crop=1",
+        photo:"https://scontent.frgn2-1.fna.fbcdn.net/v/t1.0-9/36452629_1753686794686235_5452215481941360640_n.jpg?_nc_cat=0&oh=0a0874ec79ca73687671b4911a737695&oe=5BA65EB6",
         description:"actor"
     },
     {
@@ -81,7 +81,7 @@ let data = [
         name:"Dwe",
         age:"forever",
         gender:"male",
-        photo:"http://www.7daydaily.com/sites/default/files/story/2017/07/19884111_131957367393053_7294763954404670565_n.jpg",
+        photo:"https://scontent.frgn2-1.fna.fbcdn.net/v/t1.0-9/36428342_1753686788019569_2823775542094856192_n.jpg?_nc_cat=0&oh=22224e2b52f3eb82c76a56574e6ac4df&oe=5BA43B2D",
         description:"former actor"
     }
 

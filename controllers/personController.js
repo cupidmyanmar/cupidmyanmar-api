@@ -38,7 +38,7 @@ let personController = {
 
     getAllList: async(req,res) => {
         try {
-            let data = await personModel.find({}).lean();
+            let data = await personModel.find({gender:"female"}).lean();
             return res.json({status:completed,data});
         } catch(error) {
             return res.json({status:"error",data});
