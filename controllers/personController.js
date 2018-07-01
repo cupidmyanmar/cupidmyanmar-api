@@ -74,7 +74,7 @@ let personController = {
             return res.json({status:completed});
         } catch(error) {
             console.log(error);
-            return res.json({message:error.message});
+            return res.json({message:error.message,status:completed});
         }
         // return.save().then((data) => {
            
